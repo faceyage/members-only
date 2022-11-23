@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  form.auth-form(action="", method="post") 
+    h1.title=title
+    .form-group
+      label(for="title") Title
+      input#title(type="text" name="title" required)
+    .form-group
+      label(for="message") Message
+      input#message(type="text" name="message" required)
+    input.btn(type="submit", value="Submit")

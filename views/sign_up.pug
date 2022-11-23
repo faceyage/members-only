@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  form.auth-form(action="", method="post")
+    h1.title= title
+    .form-group
+      label(for="first_name") First Name 
+      input#first_name(type="text" required name="first_name")
+    .form-group
+      label(for="last_name") Last Name 
+      input#last_name(type="text" required name="last_name")
+    .form-group
+      label(for="username") Username 
+      input#username(type="text" required name="username" minlength="6")
+    .form-group
+      label(for="password") Password 
+      input#password(type="password" required name="password" minlength="8")
+    .form-group
+      label(for="password_confirmation") Confirm Password 
+      input#password_confirmation(type="password" required minlength="8" name="password_confirmation")
+    .form-group
+      label(for="avatar") Choose Avatar 
+      .avatar-container.animatePop
+        label 
+          input(type="radio", name="avatar" value="images/ellie.jpg")
+          img.avatar(src="images/ellie.jpg", alt="ellie avatar")
+        label
+          input(type="radio", name="avatar" value="images/rick.png")
+          img.avatar(src="images/rick.png", alt="rick avatar")
+        label
+          input(type="radio", name="avatar" value="images/kratos.jpg")
+          img.avatar(src="images/kratos.jpg", alt="kratos avatar")
+        label
+          input(type="radio", name="avatar" value="images/morty.webp")
+          img.avatar(src="images/morty.webp", alt="morty avatar")
+        label
+          input(type="radio", name="avatar" value="images/eivor.jpg")
+          img.avatar(src="images/eivor.jpg", alt="eivor avatar")
+        label
+          input(type="radio", name="avatar" value="images/fsociety.jpg")
+          img.avatar(src="images/fsociety.jpg", alt="fsociety avatar")
+        label
+          input(type="radio", name="avatar" value="images/jonsnow.jpg")
+          img.avatar(src="images/jonsnow.jpg", alt="jonsnow avatar")
+    input.btn(type="submit", value="Submit")
+  if errors 
+    ul
+      each err in errors
+        li=err.msg

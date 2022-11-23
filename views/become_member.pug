@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  if !user
+    p Login first
+  else if user.membership_status
+    p You're already a member
+  else
+    form.auth-form(action="", method="post") 
+      h1.title=title
+      .form-group
+        label(for="title") Member Password
+        input#password(type="password" name="password" placeholder="enter member password" required)
+      input.btn(type="submit", value="Submit")
+  if errors 
+    ul.errors 
+      each err in errors 
+        li=err.msg

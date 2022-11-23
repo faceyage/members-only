@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  if messages
+    ul.messages
+      h1.title Messages
+      each message in messages 
+        li
+          .message.animatePop
+            .message-sender
+                if user && message.user.avatar && (user.membership_status || user.admin_status || user._id.toString() === message.user._id.toString())
+                  img.icon(src=message.user.avatar, alt="user's avatar")
+                else
+                  .icon
+                if user && user.membership_status
+                span.message-name= user && (user.membership_status || user.admin_status || user._id.toString() === message.user._id.toString() ) ? message.user.username : "Anonymous"
+            .message-content
+              h2.message-title=message.title 
+              p.message-text=message.message
+              if user && (user.membership_status || user.admin_status || user._id.toString() === message.user._id.toString() ) 
+                span.message-time=message.timestamp_formatted
+              if user && user.admin_status
+                form(action="/delete-message", method="post")
+                  input#messageId(type="hidden" name="messageId" value=message._id)
+                  input.btn.btn-danger(type="submit", value="Delete" )
+      else 
+        h2 No Messages here yet...
+            

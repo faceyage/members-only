@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  if !user
+    p Login first
+  else if user.admin_status
+    p You're already a admin
+  else
+    form.auth-form(action="", method="post") 
+      h1.title=title
+      .form-group
+        label(for="title") Admin Password
+        input#password(type="password" name="password" placeholder="enter admin password" required)
+      input.btn(type="submit", value="Submit")
+  if errors 
+    ul.errors 
+      each err in errors 
+        li=err.msg

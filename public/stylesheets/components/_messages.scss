@@ -1,0 +1,60 @@
+@use "../abstracts/" as *;
+
+.message {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+
+  padding: 1rem;
+  margin-top: 1rem;
+
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+
+  @include grow-animation(1.05);
+
+  .message-sender {
+    @include flex-center;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 1rem;
+      border: 1px solid var(--text-color);
+      background-color: rgb(135, 55, 68);
+    }
+  }
+
+  .message-content {
+    .message-title {
+      font-size: large;
+      font-weight: bold;
+    }
+
+    .message-title,
+    .message-text {
+      margin-bottom: 0.3rem;
+    }
+
+    .message-time {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      margin-left: auto;
+      justify-self: end;
+    }
+  }
+}
+
+@include desktop {
+  .messages {
+    width: 50%;
+    margin: 1rem auto 0;
+  }
+}

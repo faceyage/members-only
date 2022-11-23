@@ -1,0 +1,22 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin grow-animation($scale: 1.1) {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+@mixin background-transition($bgcolor, $textcolor: white) {
+  transition: background-color 0.4s ease-in-out;
+
+  &:hover {
+    background-color: $bgcolor;
+    color: $textcolor;
+  }
+}

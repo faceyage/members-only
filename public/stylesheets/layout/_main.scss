@@ -1,0 +1,11 @@
+@use "../abstracts/" as *;
+
+main {
+  padding: 1rem;
+}
+
+@include tablet {
+  main {
+    padding-top: 3rem;
+  }
+}
