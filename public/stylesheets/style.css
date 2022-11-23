@@ -1,9 +1,9 @@
 :root {
   --bg-color: #111827;
-  --nav-color: #18181b;
+  --nav-color: hwb(0 6% 100%);
   --text-color: white;
   --text-color2: rgba(255, 255, 255, 0.64);
-  --secondary-color: #334155;
+  --secondary-color: #1e293b;
   --danger-color: #991b1b;
   --danger-hover-color: #dc2626;
 }
@@ -102,8 +102,7 @@ footer .contact {
 .message .message-sender .icon {
   width: 50px;
   height: 50px;
-  border-radius: 1rem;
-  border: 1px solid var(--text-color);
+  border-radius: 0.6rem;
   background-color: rgb(135, 55, 68);
 }
 .message .message-content .message-title {

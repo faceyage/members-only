@@ -6,7 +6,7 @@ Members Only is a exclusive clubhouse where members can write anonymous posts. I
 
 ## Used Technologies:
 
-Frontend: Html(pug)  
+Frontend: Html(pug), CSS (SCSS)  
 Backend: JavaScript(nodejs), Expressjs  
 Database: Mongodb (mongoose)
 

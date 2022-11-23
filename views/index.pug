@@ -11,7 +11,7 @@ block content
                 if user && message.user.avatar && (user.membership_status || user.admin_status || user._id.toString() === message.user._id.toString())
                   img.icon(src=message.user.avatar, alt="user's avatar")
                 else
-                  .icon
+                  img.icon(src="images/fsociety.jpg", alt="user's avatar")
                 if user && user.membership_status
                 span.message-name= user && (user.membership_status || user.admin_status || user._id.toString() === message.user._id.toString() ) ? message.user.username : "Anonymous"
             .message-content
